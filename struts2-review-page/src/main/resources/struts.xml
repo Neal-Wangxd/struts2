@@ -11,12 +11,17 @@
 			<result name="success">pages/success.html</result>
 		</global-results>
 	
-		<!-- 若既配置了全局页面又配置了局部的页面，会跳转到局部页面 -->
+		<!-- 若既配置了全局页面又配置了局部的页面，会跳转到局部页面
+			type : dispatcher （默认值）转发，地址栏不会变化
+				   redirect	重定向，请求两次，地址栏会发生变化
+		 -->
 		<action name="hello" class="com.struts.action.HelloAction">
-			<result name="success">pages/index.html</result>
+			<result name="success" type="dispatcher">pages/success.html</result>
 		</action>
 		
-		<action name="book" class="com.struts.action.BookAction"></action>
+		<action name="book" class="com.struts.action.BookAction">
+			<result name="success" type="redirect">pages/success.html</result>
+		</action>
 	</package>
 </struts>
 
