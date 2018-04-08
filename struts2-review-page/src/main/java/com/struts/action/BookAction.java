@@ -13,6 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BookAction extends ActionSupport{
 	
 	public String execute(){
+		System.out.println("Book action ...");
 		return "success";
 	}
 
