@@ -14,14 +14,28 @@
 		<!-- 若既配置了全局页面又配置了局部的页面，会跳转到局部页面
 			type : dispatcher （默认值）转发，地址栏不会变化
 				   redirect	重定向，请求两次，地址栏会发生变化
+				   chain 转发到action （一般不用）
+				   redirectAction 重定向到action
 		 -->
 		<action name="hello" class="com.struts.action.HelloAction">
-			<result name="success" type="dispatcher">pages/success.html</result>
+			<!-- <result name="success" type="dispatcher">pages/success.html</result> -->
+			<!-- action 访问名称 -->
+			<result name="success" type="redirectAction">book</result>
 		</action>
 		
 		<action name="book" class="com.struts.action.BookAction">
 			<result name="success" type="redirect">pages/success.html</result>
 		</action>
+		
+		<action name="addUser" class="com.struts.action.UserAction" method="addUser">
+			<result name="add">pages/userAdd.html</result>
+		</action>
+		
+		<action name="addUserDo" class="com.struts.action.UserAction" method="addUserDo">
+			<result name="addDo">pages/success.html</result>
+		</action>
+		
+		
 	</package>
 </struts>
 
