@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="default" extends="struts-default" namespace="/">
+	
+		<!-- 全局页面配置 -->
+		<global-results>
+			<result name="success">pages/success.html</result>
+		</global-results>
+	
+		<!-- 若既配置了全局页面又配置了局部的页面，会跳转到局部页面 -->
+		<action name="hello" class="com.struts.action.HelloAction">
+			<result name="success">pages/index.html</result>
+		</action>
+		
+		<action name="book" class="com.struts.action.BookAction"></action>
+	</package>
+</struts>
+
