@@ -14,6 +14,7 @@ public class HelloAction extends ActionSupport {
 
 	@Override
 	public String execute(){
+		System.out.println("Hello action ...");
 		return "success";
 	}
 }
