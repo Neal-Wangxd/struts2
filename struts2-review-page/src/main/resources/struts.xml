@@ -35,6 +35,22 @@
 			<result name="addDo">pages/success.html</result>
 		</action>
 		
+		<action name="addUser2" class="com.struts.action.UserAction2" method="addUser">
+			<result name="add">pages/userAdd2.html</result>
+		</action>
+		
+		<action name="addUserDo2" class="com.struts.action.UserAction2" method="addUserDo">
+			<result name="addDo">pages/success.html</result>
+		</action>
+		
+		<action name="addUser3" class="com.struts.action.UserAction3" method="addUser">
+			<result name="add">pages/userAdd3.html</result>
+		</action>
+		
+		<action name="addUserDo3" class="com.struts.action.UserAction3" method="addUserDo">
+			<result name="addDo">pages/success.html</result>
+		</action>
+		
 		
 	</package>
 </struts>
