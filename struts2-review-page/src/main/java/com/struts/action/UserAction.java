@@ -12,6 +12,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.struts.bean.User;
 
 /** 
 * @author 作者 wxd  
@@ -22,6 +23,10 @@ import com.opensymphony.xwork2.ActionSupport;
 */
 @SuppressWarnings("serial")
 public class UserAction extends ActionSupport {
+	
+	private String username;
+	private String password;
+	private String address;
 	
 	public String addUser(){
 		System.out.println("AddUser ....");
@@ -61,9 +66,42 @@ public class UserAction extends ActionSupport {
 		ServletContext contexts = ServletActionContext.getServletContext();
 		contexts.setAttribute("contextName", "contextValue");
 		
+		
+		//通过属性封装到对象
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setAddress(address);
+		System.out.println(user+"----------------");
+		
+		
 		return "addDo";
 	}
 	
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	
 
 }
